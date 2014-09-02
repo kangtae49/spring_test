@@ -23,6 +23,8 @@ public class HomeController {
 	@Value("#{config['env']}")
 	String env = "";
 	// test
+	// test2
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
