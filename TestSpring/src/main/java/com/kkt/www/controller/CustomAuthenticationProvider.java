@@ -16,8 +16,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
  
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	
+	
+	
     @Override
     public boolean supports(Class<?> authentication) {
+    	System.out.println("CustomAuthenticationProvider-supports");
         return authentication.equals(UsernamePasswordAuthenticationToken.class);
     }
  

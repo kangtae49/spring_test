@@ -19,22 +19,23 @@
 					authentication-failure-url="/login"	
 					always-use-default-target='true'
 					/>
-		
 		<session-management>
-			<concurrency-control  expired-url="/login_duplicate"/>
-			<!-- <concurrency-control max-sessions="1" expired-url="/login"/> -->
+			<concurrency-control max-sessions="1" expired-url="/login_duplicate"/>
 		</session-management>
 		
 	</http>
-	   	
- 		 
+	
+
+
+
+
  	<beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+	   	
  	
 	<authentication-manager>
 	    <authentication-provider ref="customAuthenticationProvider"/>
 	</authentication-manager>	
     
     <beans:bean id="customAuthenticationProvider" class="com.kkt.www.controller.CustomAuthenticationProvider"/>  
-    
     
 </beans:beans>

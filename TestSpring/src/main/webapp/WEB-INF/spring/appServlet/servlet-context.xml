@@ -10,37 +10,6 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-<!-- 
-    <security:http auto-config='true' >
-		<security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<security:intercept-url pattern="/login_duplicate" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<security:intercept-url pattern="/**" access="ROLE_USER" />
-		<security:form-login login-page="/login" 
-					username-parameter="id" 
-					password-parameter="pw"		
-					login-processing-url="/loginProcess"
-					default-target-url="/login_success" 
-					authentication-failure-url="/login"	
-					always-use-default-target='true'
-					/>
-		
-		<security:session-management>
-			<security:concurrency-control max-sessions="1" expired-url="/login_duplicate"/>
-		</security:session-management>
-		
-	</security:http>
-	   	
- 		 
- 	<beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
- 	
-	<security:authentication-manager>
-	    <security:authentication-provider ref="customAuthenticationProvider"/>
-	</security:authentication-manager>	
-    
-    <beans:bean id="customAuthenticationProvider" class="com.kkt.www.controller.CustomAuthenticationProvider"/> 
-
- -->
-
 
 
 	<!-- Enables the Spring MVC @Controller programming model -->

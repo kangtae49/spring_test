@@ -65,7 +65,9 @@
 				/WEB-INF/spring/appServlet/security-context.xml
 			</param-value>
 	</context-param>	
-	
+<!-- 
+
+ -->	
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
@@ -100,8 +102,6 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>	
-
-
 	
 
 </web-app>

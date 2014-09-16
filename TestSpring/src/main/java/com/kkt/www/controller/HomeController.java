@@ -16,7 +16,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.session.SessionInformation;
+import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +43,13 @@ public class HomeController {
 	
 	@Value("#{config['env']}")
 	String env = "";
+	
+	
+//	@Autowired
+//	protected SessionRegistry sessionRegistry;
+	 	
+	
+	
 	// test
 	// test2
 	
@@ -129,6 +139,34 @@ public class HomeController {
 	
 	@RequestMapping(value = "page1", method = RequestMethod.GET)
 	public void page1() {		
+	}
+
+	@RequestMapping(value = "loginProcess", method = RequestMethod.POST)
+	public void loginProcess(HttpSession session, final HttpServletRequest request) {
+//		UserVO userDetails = (UserVO)SecurityContextHolder.getContext().getAuthentication().getDetails();
+		
+		String id = (String)request.getParameter("id");
+		String pw = (String)request.getParameter("pw");
+		UserVO userDetails = new UserVO(id, pw);
+		logger.info("Welcome login_success! {}, {}", session.getId(), userDetails.getUsername() + "/" + userDetails.getPassword());
+		session.setAttribute("userLoginInfo", userDetails);
+		
+		
+//        List<Object> infos=sessionRegistry.getAllPrincipals();
+//        System.out.println(infos.toString());
+//        System.out.println("hi");
+//        
+//        
+//        List<SessionInformation> aa = sessionRegistry.getAllSessions("userLoginInfo", false);
+//		System.out.println(aa.size());
+		
+//		List<SessionInformation> sessions = sessionRegistry.getAllSessions("", false);
+//		for (SessionInformation s : sessions) {
+//			System.out.println(s.getSessionId());
+//		}
+		
+		
+		
 	}
 	
 	@RequestMapping(value = "login_duplicate", method = RequestMethod.GET)
